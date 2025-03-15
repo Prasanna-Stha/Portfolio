@@ -33,28 +33,28 @@ const AboutMe = () => {
               <FontAwesomeIcon icon={faGlobe} className="mr-4 text-indigo-600" />
               <span className="font-medium">Website:</span>
               <a
-                href="http://www.prasanna.com.np"
+                href="http://www.shresthaprasanna.com.np"
                 className="text-indigo-600 hover:underline ml-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                www.prasanna.com.np
+                https://www.shresthaprasanna.com.np
               </a>
             </p>
             <p className="flex items-center text-gray-700">
               <FontAwesomeIcon icon={faPhoneAlt} className="mr-4 text-indigo-600" />
-              <span className="font-medium">Phone:</span> +977 9755107191
+              <span className="font-medium mr-2">Phone:</span> +977 9707191551
             </p>
             <p className="flex items-center text-gray-700">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-4 text-indigo-600" />
-              <span className="font-medium">City:</span> Kathmandu, Nepal
+              <span className="font-medium mr-2">City:</span> Kathmandu, Nepal
             </p>
           </div>
 
           <div className="space-y-4">
             <p className="flex items-center text-gray-700">
               <FontAwesomeIcon icon={faGraduationCap} className="mr-4 text-indigo-600" />
-              <span className="font-medium">Degree:</span> BSc. (Hons.) IT
+              <span className="font-medium mr-2">Degree:</span> BSc. (Hons.) IT
             </p>
             <p className="flex items-center text-gray-700">
               <FontAwesomeIcon icon={faEnvelope} className="mr-4 text-indigo-600" />
@@ -68,7 +68,7 @@ const AboutMe = () => {
             </p>
             <p className="flex items-center text-gray-700">
               <FontAwesomeIcon icon={faUserTie} className="mr-4 text-indigo-600" />
-              <span className="font-medium">Freelance:</span> Available
+              <span className="font-medium mr-2">Freelance:</span> Available
             </p>
           </div>
         </div>

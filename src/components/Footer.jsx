@@ -6,6 +6,7 @@ import {
   faTwitter,
   faInstagram,
   faLinkedinIn,
+  faGithub, // Import GitHub icon
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
         {/* Top Section - Social Links */}
         <div className="flex space-x-6 mb-6">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/share/1QWCENFrbE/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400 transition duration-300"
@@ -23,7 +24,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faFacebookF} />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://x.com/Prasanna_131?t=Su09aVF6fU7aLzbUyrPV3w&s=09"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400 transition duration-300"
@@ -31,7 +32,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faTwitter} />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/_shresthapdd?igsh=czhjejY2OHRlbmUy"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400 transition duration-300"
@@ -39,12 +40,20 @@ const Footer = () => {
             <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/prasanna-shrestha-a403161bb/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400 transition duration-300"
           >
             <FontAwesomeIcon icon={faLinkedinIn} />
+          </a>
+          <a
+            href="https://github.com/Prasanna-Stha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-400 transition duration-300"
+          >
+            <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>
 

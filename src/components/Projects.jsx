@@ -19,7 +19,7 @@ const Projects = () => {
       title: "E-Commerce Website",
       description:
         "A modern e-commerce website with a user-friendly interface, built with React and Node.js.",
-      link: "#",
+      link: "https://github.com/Prasanna-Stha/E-Commerce---Kwaan",
     },
     {
       title: "To-Do List",

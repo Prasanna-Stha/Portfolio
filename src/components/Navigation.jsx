@@ -17,17 +17,13 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-gray-900 text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+    <nav className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white fixed top-0 left-0 w-full z-50 shadow-lg border-b border-gray-700">
       {/* Header Section */}
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+      <div className="container mx-auto flex items-center justify-between py-6 px-8">
         {/* Logo */}
-        <Link
-          to="home"
-          smooth={true}
-          duration={500}
-        >
-          <h1 className="cursor-pointer text-2xl font-bold tracking-wide transition duration-300 ease-in-out hover:text-blue-500">
-            Paru
+        <Link to="home" smooth={true} duration={500}>
+          <h1 className="cursor-pointer text-3xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 ease-in-out hover:text-white">
+            &lt;/paru&gt;
           </h1>
         </Link>
 
@@ -37,95 +33,104 @@ const Navigation = () => {
             to="home"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faHome} className="w-4 h-4" />
-            <span>Home</span>
+            <FontAwesomeIcon icon={faHome} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Home</span>
           </Link>
           <Link
             to="about"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faUser} className="w-4 h-4" />
-            <span>About</span>
+            <FontAwesomeIcon icon={faUser} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">About</span>
           </Link>
           <Link
             to="projects"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faProjectDiagram} className="w-4 h-4" />
-            <span>Projects</span>
+            <FontAwesomeIcon icon={faProjectDiagram} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Projects</span>
           </Link>
           <Link
             to="contact"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
-            <span>Contact</span>
+            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Contact</span>
           </Link>
         </div>
 
         {/* Hamburger Menu Button for Mobile */}
         <button className="sm:hidden focus:outline-none" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} className="w-6 h-6 text-white" />
+          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} className="w-6 h-6 text-white transition-all duration-300 ease-in-out" />
         </button>
       </div>
 
       {/* Mobile Navigation - Sliding Drawer */}
       <div
-        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transform ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-in-out sm:hidden`}
+        className={`fixed top-0 left-0 h-full bg-gray-900 text-white transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-500 ease-in-out sm:hidden`}
         style={{ width: "75vw" }}
       >
         <div className="p-4">
-          <h1 className="text-2xl font-bold tracking-wide text-center">Paru</h1>
+          <Link 
+            to="home"
+            smooth={true}
+            duration="500"
+            className="text-2xl font-bold tracking-wide text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
+            onClick={closeMenu}>
+            &lt;/paru&gt;
+          </Link>
         </div>
         <div className="mt-6 flex flex-col space-y-6 px-6">
           <Link
             to="home"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faHome} className="w-4 h-4" />
-            <span>Home</span>
+            <FontAwesomeIcon icon={faHome} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Home</span>
           </Link>
+
           <Link
             to="about"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faUser} className="w-4 h-4" />
-            <span>About</span>
+            <FontAwesomeIcon icon={faUser} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">About</span>
           </Link>
+
           <Link
             to="projects"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faProjectDiagram} className="w-4 h-4" />
-            <span>Projects</span>
+            <FontAwesomeIcon icon={faProjectDiagram} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Projects</span>
           </Link>
+
           <Link
             to="contact"
             smooth={true}
             duration={500}
-            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer"
+            className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
-            <span>Contact</span>
+            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Contact</span>
           </Link>
         </div>
       </div>
