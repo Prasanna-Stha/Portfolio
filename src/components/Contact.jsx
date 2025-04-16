@@ -22,7 +22,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    // Add form submission logic here
   };
 
   return (
@@ -47,7 +46,7 @@ const Contact = () => {
               <div className="flex items-center mb-4">
                 <FontAwesomeIcon icon={faPhoneAlt} className="mr-3 text-blue-500" />
                 <p>
-                  <strong>Phone:</strong> +977 9745722040
+                  <strong>Phone:</strong> +977 9707191551
                 </p>
               </div>
               <div className="flex items-center mb-4">

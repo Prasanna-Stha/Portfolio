@@ -4,9 +4,8 @@ import { Link } from "react-scroll";
 import {
   faFacebookF,
   faTwitter,
-  faInstagram,
   faLinkedinIn,
-  faGithub, // Import GitHub icon
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
@@ -30,14 +29,6 @@ const Footer = () => {
             className="hover:text-gray-400 transition duration-300"
           >
             <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a
-            href="https://www.instagram.com/_shresthapdd?igsh=czhjejY2OHRlbmUy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-400 transition duration-300"
-          >
-            <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a
             href="https://www.linkedin.com/in/prasanna-shrestha-a403161bb/"

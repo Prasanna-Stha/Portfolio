@@ -28,7 +28,7 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden sm:flex space-x-8">
+        <div className="hidden sm:flex items-center space-x-8">
           <Link
             to="home"
             smooth={true}
@@ -64,6 +64,16 @@ const Navigation = () => {
           >
             <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 group-hover:scale-110 transition-transform" />
             <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Contact</span>
+          </Link>
+          
+          {/* Hire Me Button - Desktop */}
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Hire Me
           </Link>
         </div>
 
@@ -131,6 +141,17 @@ const Navigation = () => {
           >
             <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 group-hover:scale-110 transition-transform" />
             <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Contact</span>
+          </Link>
+          
+          {/* Hire Me Button - Mobile */}
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
+            onClick={closeMenu}
+          >
+            Hire Me
           </Link>
         </div>
       </div>

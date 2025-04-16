@@ -8,21 +8,25 @@ const Timeline = () => {
       description: "I took my first step into web development by learning HTML, CSS, and JavaScript.",
     },
     {
-      date: "2022",
+      date: "2023",
       title: "Joined Techspire College",
       description: "I enrolled in Techspire College to pursue my Bachelor's degree in IT.",
-    },
-    {
-      date: "2023",
-      title: "First Web Development Job",
-      description: "I started my first job as a junior web developer, building websites for clients.",
     },
     {
       date: "2024",
       title: "Started My Portfolio",
       description: "I decided to build my own portfolio to showcase my skills and projects.",
     },
-    // Add more milestones as needed
+    {
+      date: "2025",
+      title: "Joined as Front-end Internee in Code Himalaya - An IT product outsourcing company",
+      description: "I started my professional journey in web development as a frond-end internee in Code Himalaya.",
+    },
+    {
+      date: "2025",
+      title: "Promoted to Front-end Trainee in Code Himalaya - An IT product outsourcing company",
+      description: "I was promoted as a Trainee in front-end development in Code Himalaya.",
+    },
   ];
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
   const sentences = [
@@ -21,16 +21,15 @@ const Hero = () => {
       const typingTimeout = setTimeout(() => {
         setDisplayText((prev) => prev + currentSentence[charIndex]);
         setCharIndex((prev) => prev + 1);
-      }, 120); // Slower typing speed for smoother effect
+      }, 120);
 
       return () => clearTimeout(typingTimeout);
     } else {
-      // Sentence pause before switching
       const pauseTimeout = setTimeout(() => {
-        setDisplayText(""); // Clear for the next sentence
+        setDisplayText("");
         setCharIndex(0);
         setCurrentSentenceIndex((prev) => (prev + 1) % sentences.length);
-      }, 3000); // Pause duration before switching
+      }, 3000);
 
       return () => clearTimeout(pauseTimeout);
     }
