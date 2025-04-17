@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faHome, faUser, faProjectDiagram, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faTimes,
+  faHome,
+  faUser,
+  faProjectDiagram,
+  faEnvelope,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   // Toggle Mobile Menu
   const toggleMenu = () => {
@@ -14,6 +24,13 @@ const Navigation = () => {
   // Close Mobile Menu after link click
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  // Handle search submission
+  const handleSearch = (e) => {
+    e.preventDefault();
+    alert(`Searching for: ${searchQuery}`); // Replace with actual search logic
+    setSearchQuery("");
   };
 
   return (
@@ -35,8 +52,13 @@ const Navigation = () => {
             duration={500}
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faHome} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Home</span>
+            <FontAwesomeIcon
+              icon={faHome}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              Home
+            </span>
           </Link>
           <Link
             to="about"
@@ -44,8 +66,13 @@ const Navigation = () => {
             duration={500}
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faUser} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">About</span>
+            <FontAwesomeIcon
+              icon={faUser}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              About
+            </span>
           </Link>
           <Link
             to="projects"
@@ -53,8 +80,13 @@ const Navigation = () => {
             duration={500}
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faProjectDiagram} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Projects</span>
+            <FontAwesomeIcon
+              icon={faProjectDiagram}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              Projects
+            </span>
           </Link>
           <Link
             to="contact"
@@ -62,16 +94,42 @@ const Navigation = () => {
             duration={500}
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
           >
-            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Contact</span>
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              Contact
+            </span>
           </Link>
-          
+
+          {/* Collapsible Search Field - Desktop */}
+          <form onSubmit={handleSearch} className="relative">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setIsSearchFocused(true)}
+              onBlur={() => setIsSearchFocused(false)}
+              className={`bg-gray-800 px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+                isSearchFocused ? "w-64 pr-10" : "w-32 pr-10"
+              } outline-none`}
+            />
+            <button
+              type="submit"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+            >
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </form>
+
           {/* Hire Me Button - Desktop */}
           <Link
             to="contact"
             smooth={true}
             duration={500}
-            className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
           >
             Hire Me
           </Link>
@@ -79,26 +137,49 @@ const Navigation = () => {
 
         {/* Hamburger Menu Button for Mobile */}
         <button className="sm:hidden focus:outline-none" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} className="w-6 h-6 text-white transition-all duration-300 ease-in-out" />
+          <FontAwesomeIcon
+            icon={isOpen ? faTimes : faBars}
+            className="w-6 h-6 text-white transition-all duration-300 ease-in-out"
+          />
         </button>
       </div>
 
       {/* Mobile Navigation - Sliding Drawer */}
       <div
-        className={`fixed top-0 left-0 h-full bg-gray-900 text-white transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-500 ease-in-out sm:hidden`}
+        className={`fixed top-0 left-0 h-full bg-gray-900 text-white transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-500 ease-in-out sm:hidden`}
         style={{ width: "75vw" }}
       >
         <div className="p-4">
-          <Link 
+          <Link
             to="home"
             smooth={true}
             duration="500"
             className="text-2xl font-bold tracking-wide text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
-            onClick={closeMenu}>
+            onClick={closeMenu}
+          >
             &lt;/paru&gt;
           </Link>
         </div>
         <div className="mt-6 flex flex-col space-y-6 px-6">
+          {/* Mobile Search Field */}
+          <form onSubmit={handleSearch} className="relative mb-4">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-gray-800 px-4 py-3 rounded-full text-sm pr-10"
+            />
+            <button
+              type="submit"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+            >
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </form>
+
           <Link
             to="home"
             smooth={true}
@@ -106,8 +187,13 @@ const Navigation = () => {
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faHome} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Home</span>
+            <FontAwesomeIcon
+              icon={faHome}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              Home
+            </span>
           </Link>
 
           <Link
@@ -117,8 +203,13 @@ const Navigation = () => {
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faUser} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">About</span>
+            <FontAwesomeIcon
+              icon={faUser}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              About
+            </span>
           </Link>
 
           <Link
@@ -128,8 +219,13 @@ const Navigation = () => {
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faProjectDiagram} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Projects</span>
+            <FontAwesomeIcon
+              icon={faProjectDiagram}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              Projects
+            </span>
           </Link>
 
           <Link
@@ -139,10 +235,15 @@ const Navigation = () => {
             className="text-lg flex items-center space-x-3 hover:text-blue-500 cursor-pointer transition-all duration-300 ease-in-out group"
             onClick={closeMenu}
           >
-            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">Contact</span>
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="w-5 h-5 group-hover:scale-110 transition-transform"
+            />
+            <span className="transition-all duration-300 ease-in-out group-hover:text-blue-500">
+              Contact
+            </span>
           </Link>
-          
+
           {/* Hire Me Button - Mobile */}
           <Link
             to="contact"
