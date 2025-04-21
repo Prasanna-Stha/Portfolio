@@ -11,15 +11,7 @@ const AboutMe = () => {
     { icon: faEnvelope, text: "sthaprasanna131@gmail.com", link: "mailto:sthaprasanna131@gmail.com" },
     { icon: faPhoneAlt, text: "+977 9707191551" },
     { icon: faMapMarkerAlt, text: "Kathmandu, Nepal" },
-    { icon: faGlobe, text: "shresthaprasanna.com.np", link: "http://shresthaprasanna.com.np" }
-  ];
-
-  const expertise = [
-    { icon: faCode, title: "Web Dev", description: "React, Chakra UI, Modern Frameworks" },
-    { icon: faPalette, title: "UI/UX", description: "User-Centered Interfaces" },
-    { icon: faChartLine, title: "Digital Marketing", description: "SEO & Social Media" },
-    { icon: faShieldAlt, title: "Security", description: "Web App Protection" },
-    { icon: faRobot, title: "AI", description: "Smart Features" }
+    { icon: faGlobe, text: "iamprasanna.netlify.app", link: "http://iamprasanna.netlify.app" }
   ];
 
   return (
