@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCode, faPalette, faChartLine, faDatabase,
-  faMobileAlt, faServer, faSearchDollar, faShieldAlt,
-  faRobot, faCloud, faEnvelope, faPhoneAlt, faMapMarkerAlt, faGlobe
+  faEnvelope, faPhoneAlt, faMapMarkerAlt, faGlobe
 } from "@fortawesome/free-solid-svg-icons";
 import paruImg from "../assets/prasanna.jpg";
 
