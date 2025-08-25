@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
-const Hero = () => {
-  const sentences = [
-    "A Front-End Developer passionate about crafting modern, responsive designs.",
-    "Turning ideas into functional and user-friendly interfaces.",
-    "Exploring the intersection of design and technology.",
-    "Dedicated to continuous learning and growth in the IT field.",
-    "Committed to delivering high-quality, efficient solutions.",
-  ];
+const sentences = [
+  "A Front-End Developer passionate about crafting modern, responsive designs.",
+  "Turning ideas into functional and user-friendly interfaces.",
+  "Exploring the intersection of design and technology.",
+  "Dedicated to continuous learning and growth in the IT field.",
+  "Committed to delivering high-quality, efficient solutions.",
+];
 
+const Hero = () => {
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
@@ -33,13 +33,19 @@ const Hero = () => {
 
       return () => clearTimeout(pauseTimeout);
     }
-  }, [charIndex, currentSentenceIndex, sentences]);
+  }, [charIndex, currentSentenceIndex]);
 
   return (
-    <header id="home" className="bg-gray-900 text-white min-h-screen flex items-center justify-center px-6 sm:px-12">
+    <header
+      id="home"
+      className="bg-gray-900 text-white min-h-screen flex items-center justify-center px-6 sm:px-12"
+    >
       <div className="max-w-4xl text-center">
         <h1 className="text-4xl sm:text-6xl font-bold mb-6">
-          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Paru</span>
+          Hi, I&apos;m{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+            Paru
+          </span>
         </h1>
         <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
           <span className="pop-in-text">{displayText}</span>

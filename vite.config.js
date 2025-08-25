@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Custom domain requires '/' as the base
+  base: 'https://shresthaprasanna.com.np/',
 });

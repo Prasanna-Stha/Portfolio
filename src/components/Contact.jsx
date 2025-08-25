@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -51,7 +51,10 @@ const Contact = () => {
         alert("Something went wrong. Please try again later.");
       }
     } catch (error) {
-      alert("Something went wrong. Please check your internet connection.");
+      alert(
+        "Something went wrong. Please check your internet connection.",
+        error
+      );
     }
   };
 
@@ -72,8 +75,8 @@ const Contact = () => {
               Get in Touch
             </h3>
             <p className="text-lg text-gray-300 mb-6">
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your vision.
+              I&apos;m always open to discussing new projects, creative ideas,
+              or opportunities to be part of your vision.
             </p>
             <div className="text-gray-300">
               <div className="flex items-center mb-4">
