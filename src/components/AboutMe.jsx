@@ -1,15 +1,37 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faEnvelope, faPhoneAlt, faMapMarkerAlt, faGlobe
+  faEnvelope,
+  faPhoneAlt,
+  faMapMarkerAlt,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import paruImg from "../assets/prasanna.jpg";
 
 const AboutMe = () => {
   const personalInfo = [
-    { icon: faEnvelope, text: "sthaprasanna131@gmail.com", link: "mailto:sthaprasanna131@gmail.com" },
+    {
+      icon: faEnvelope,
+      text: "sthaprasanna131@gmail.com",
+      link: "mailto:sthaprasanna131@gmail.com",
+    },
     { icon: faPhoneAlt, text: "+977 9707191551" },
     { icon: faMapMarkerAlt, text: "Kathmandu, Nepal" },
-    { icon: faGlobe, text: "iamprasanna.netlify.app", link: "http://iamprasanna.netlify.app" }
+    {
+      icon: faGlobe,
+      text: "shresthaprasanna.com.np",
+      link: "http://shresthaprasanna.com.np",
+    },
+    {
+      icon: faLinkedin,
+      text: "Prasanna Shrestha",
+      link: "https://www.linkedin.com/in/prasanna-shrestha-a403161bb/",
+    },
+    {
+      icon: faGithub,
+      text: "Prasanna Shrestha",
+      link: "https://github.com/Prasanna-Stha",
+    },
   ];
 
   return (
@@ -35,12 +57,17 @@ const AboutMe = () => {
 
           {/* Profile Details */}
           <div className="flex-1 lg:text-left">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Prasanna Shrestha</h1>
-            <p className="text-blue-600 text-lg mb-6">Frontend Developer & Digital Creator</p>
-            
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Prasanna Shrestha
+            </h1>
+            <p className="text-blue-600 text-lg mb-6">
+              Frontend Developer & Digital Creator
+            </p>
+
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Passionate IT professional specializing in modern web development and digital solutions.
-              Focused on creating performant, accessible, and visually appealing applications.
+              Passionate IT professional specializing in modern web development
+              and digital solutions. Focused on creating performant, accessible,
+              and visually appealing applications.
             </p>
 
             {/* Contact Info Grid */}
@@ -48,10 +75,17 @@ const AboutMe = () => {
               {personalInfo.map((item, index) => (
                 <div key={index} className="flex items-center lg:justify-start">
                   <div className="bg-white p-2 rounded-lg mr-3 shadow-sm">
-                    <FontAwesomeIcon icon={item.icon} className="text-blue-600" />
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      className="text-blue-600"
+                    />
                   </div>
                   {item.link ? (
-                    <a href={item.link} className="text-gray-700 hover:text-blue-600 transition-colors">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      className="text-gray-700 hover:text-blue-600 transition-colors"
+                    >
                       {item.text}
                     </a>
                   ) : (

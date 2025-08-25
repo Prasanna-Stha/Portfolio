@@ -19,10 +19,10 @@ const Projects = () => {
       tags: ["React", "Tailwind CSS"],
     },
     {
-      title: "To-Do List",
+      title: "User Panel",
       description:
-        "A simple to-do list web app built with React and Tailwind for task management.",
-      link: "https://github.com/Prasanna-Stha/to-Do-List",
+        "A simple system for managing users, based on their roles. ",
+      link: "https://github.com/Prasanna-Stha/UserPanel",
       tags: ["React", "TailwindCSS", "Productivity"],
     },
     {
