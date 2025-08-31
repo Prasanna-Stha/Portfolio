@@ -33,6 +33,15 @@ const Skills = () => {
       borderColor: "border-yellow-400/30"
     },
     {
+      name: "TypeScript",
+      icon: null,
+      description: "Strongly typed JavaScript for scalable applications",
+      level: "Intermediate",
+      bgHover: "bg-blue-600/10",
+      iconColor: "#3178c6",
+      borderColor: "border-blue-600/30"
+    },
+    {
       name: "CSS3",
       icon: faCss3Alt,
       description: "Responsive layouts and animations",
@@ -94,7 +103,7 @@ const Skills = () => {
             </h2>
             <div className="w-16 h-1 bg-blue-500 mx-auto sm:mx-0 rounded-full"></div>
           </div>
-          
+
           <button
             onClick={toggleViewMode}
             className="flex items-center gap-2 px-4 py-2.5 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 border border-gray-700"
