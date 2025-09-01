@@ -14,7 +14,7 @@ const Projects = () => {
     {
       title: "E-Commerce Website",
       description:
-        "A modern e-commerce website with a user-friendly interface, built with React and Node.js.",
+        "A modern e-commerce website with a user-friendly interface, built with React.",
       link: "https://github.com/Prasanna-Stha/E-Commerce---Kwaan",
       tags: ["React", "Tailwind CSS"],
     },
@@ -23,7 +23,7 @@ const Projects = () => {
       description:
         "A simple system for managing users, based on their roles. ",
       link: "https://github.com/Prasanna-Stha/UserPanel",
-      tags: ["React", "TailwindCSS", "Productivity"],
+      tags: ["React", "Chakra UI", "Productivity"],
     },
     {
       title: "educateNepal",
