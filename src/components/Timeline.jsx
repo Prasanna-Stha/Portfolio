@@ -25,6 +25,13 @@ const milestones = [
     description:
       "I was promoted as a Trainee in front-end development in Code Himalaya.",
   },
+  {
+    date: "2025",
+    title:
+      "Promoted to Junior Front-end in Code Himalaya",
+    description:
+      "I was promoted as a Junior front-end Developer in Code Himalaya.",
+  },
 ];
 
 const Timeline = () => {
